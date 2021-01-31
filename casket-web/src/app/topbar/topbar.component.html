@@ -1,0 +1,36 @@
+<div class="topbar">
+    <div class="topbar-left">
+        <img src="assets/images/default-logo.png" alt="logo">
+        <h1>Casket</h1>
+    </div>
+    <div class="topbar-center">
+        <input type="text" class="p-inputtext-lg" pInputText placeholder="Search" [(ngModel)]="inputValue" />
+        <button pButton
+                label="Search"
+                class="p-button-raised p-button-rounded"
+                [@search]="inputValue != '' ? 'search' : 'notSearch'"></button>
+    </div>
+    <div class="topbar-right">
+        <div class="topbar-right-buttons">
+            <button pButton type="button" icon="pi pi-unlock" label="Login" class="p-button-text"></button>
+            <button pButton type="button" icon="pi pi-user-plus" label="Register" class="p-button-raised p-button-secondary"></button>
+        </div>
+        <img src="assets/images/default-user-image.png"
+             alt="user pic"
+             (click)="onUserLogoClick()"
+             [@borderNotBorder]="!menuVisible ? 'border' : 'notBorder'">
+    </div>
+</div>
+<div class="user-menu" [@openClose]="menuVisible ? 'open' : 'closed'">
+    <div class="user-data">
+        <img src="assets/images/default-user-image.png" alt="user pic">
+        <h1>Jasoc</h1>
+        <h2>paridegiunta@gmail.com</h2>
+    </div>
+    <div class="user-menu-buttons">
+        <button pButton type="button" label="Settings" class="settings p-button-rounded p-button-outlined p-button-secondary"></button>
+        <div style="margin-left: 10px"></div>
+        <button pButton class="logout p-button-rounded p-button-danger" label="Logout"></button>
+    </div>
+    <mat-slide-toggle class="example-margin" color="primary">Dark theme</mat-slide-toggle>
+</div>
