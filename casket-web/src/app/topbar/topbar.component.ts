@@ -57,12 +57,49 @@ import {
       
       transition('search <=> notSearch', [ animate('.1s') ]),
     ]),
+
+    trigger('settingsMainAnimation', [
+      
+      transition(':enter', [
+        style({
+          right: 'auto',
+        }),
+        animate('200ms', style({
+          right: '100px',
+        })),
+      ]),
+      
+      transition(':leave', [
+        animate('200ms', style({
+          right: 'auto',
+        })),
+      ])
+    ]),
+
+    trigger('settingsSlideAnimation', [
+      
+      transition(':enter', [
+        style({
+          left: 'auto',
+        }),
+        animate('200ms', style({
+          left: '100px',
+        })),
+      ]),
+      
+      transition(':leave', [
+        animate('200ms', style({
+          left: 'auto',
+        })),
+      ])
+    ]),
   ],
 })
 export class TopbarComponent implements OnInit {
 
   public menuVisible: boolean = false;
   public inputValue: string = "";
+  public popupWindow: string = "default";
 
   constructor(public _theme: ThemeService) { }
 
@@ -71,6 +108,15 @@ export class TopbarComponent implements OnInit {
 
   onUserLogoClick() {
     this.menuVisible = !this.menuVisible;
+    this.popupWindow = "default";
+  }
+
+  onSettingsButtonClick() {
+    this.popupWindow = "settings";
+  }
+
+  onPopupSettingsBackCLick() {
+    this.popupWindow = "default";
   }
 
 }

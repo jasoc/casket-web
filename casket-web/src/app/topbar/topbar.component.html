@@ -1,19 +1,19 @@
-<div class="topbar">
+<div class="topbar" [class]="_theme.dark ? 'topbar-dark' : ''">
     <div class="topbar-left">
         <img src="assets/images/default-logo.png" alt="logo">
         <h1>Casket</h1>
     </div>
     <div class="topbar-center">
         <input type="text" class="p-inputtext-lg" pInputText placeholder="Search" [(ngModel)]="inputValue" />
-        <button pButton
-                label="Search"
+        <button mat-flat-button
+                color="accent"
                 class="p-button-raised p-button-rounded"
-                [@search]="inputValue != '' ? 'search' : 'notSearch'"></button>
+                [@search]="inputValue != '' ? 'search' : 'notSearch'">Search</button>
     </div>
     <div class="topbar-right">
         <div class="topbar-right-buttons">
-            <button pButton type="button" icon="pi pi-unlock" label="Login" class="p-button-text"></button>
-            <button pButton type="button" icon="pi pi-user-plus" label="Register" class="p-button-raised p-button-secondary"></button>
+            <button mat-flat-button color="accent">Login</button>
+            <button mat-flat-button color="primary">Register</button>
         </div>
         <img src="assets/images/default-user-image.png"
              alt="user pic"
@@ -21,16 +21,30 @@
              [@borderNotBorder]="!menuVisible ? 'border' : 'notBorder'">
     </div>
 </div>
-<div class="user-menu" [@openClose]="menuVisible ? 'open' : 'closed'">
-    <div class="user-data">
-        <img src="assets/images/default-user-image.png" alt="user pic">
-        <h1>Jasoc</h1>
-        <h2>paridegiunta@gmail.com</h2>
+<div class="user-menu" [class]="_theme.dark ? 'user-menu-dark' : ''" [@openClose]="menuVisible ? 'open' : 'closed'">
+    <div @settingsMainAnimation *ngIf="popupWindow == 'default'" class="user-menu-default">
+        <div class="user-data">
+            <img src="assets/images/default-user-image.png" alt="user pic">
+            <h1>Jasoc</h1>
+            <h2>paridegiunta@gmail.com</h2>
+        </div>
+        <div class="user-menu-buttons">
+            <button mat-flat-button color="accent" style="border-radius: 100px;" (click)="onSettingsButtonClick()">Settings</button>
+            <div style="margin-left: 10px"></div>
+            <button mat-flat-button color="warn" style="border-radius: 100px;">Logout</button>
+        </div>
     </div>
-    <div class="user-menu-buttons">
-        <button pButton type="button" label="Settings" class="settings p-button-rounded p-button-outlined p-button-secondary"></button>
-        <div style="margin-left: 10px"></div>
-        <button pButton class="logout p-button-rounded p-button-danger" label="Logout"></button>
+    <div @settingsSlideAnimation *ngIf="popupWindow == 'settings'" class="user-data-settings">
+        <div class="user-data-settings-top">
+            <button (click)="onPopupSettingsBackCLick()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>arrow_left</mat-icon>
+            </button>
+        </div>
+        <div class="user-data-settings-sliders">
+            <div class="user-data-settings-slider">
+                <mat-slide-toggle [(ngModel)]="_theme.dark" class="example-margin"></mat-slide-toggle>
+                <label>Dark theme</label>
+            </div>
+        </div>
     </div>
-    <mat-slide-toggle class="example-margin" color="primary">Dark theme</mat-slide-toggle>
 </div>

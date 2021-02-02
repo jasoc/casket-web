@@ -4,12 +4,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
  
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { BlockUIModule } from 'primeng/blockui';
+import { AccordionModule } from 'primeng/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +39,10 @@ import { TopbarComponent } from './topbar/topbar.component';
     // Angular Material
 
     MatSlideToggleModule,
-
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    
     // PrimeNG
 
     ButtonModule,
@@ -43,7 +50,8 @@ import { TopbarComponent } from './topbar/topbar.component';
     DividerModule,
     BlockUIModule,
     InputTextModule,
-
+    AccordionModule,
+    
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   

@@ -1,6 +1,7 @@
 $BORDER-MARGIN: 25px;
 $TOPBAR-HEIGHT: 75px;
-$TOPBAR-COLOR: #f5f5f5;
+$TOPBAR-COLOR: white;
+$TOPBAR-COLOR-DARK: #242424;
 
 .topbar {
 
@@ -95,15 +96,51 @@ $TOPBAR-COLOR: #f5f5f5;
     width: 400px;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     border-radius: 10px;
+    overflow: hidden;
 
     -webkit-box-shadow: 0px 0px 4px 1px rgba(189,189,189,1);
     -moz-box-shadow: 0px 0px 4px 1px rgba(189,189,189,1);
     box-shadow: 0px 0px 4px 1px rgba(189,189,189,1);
 
+    .user-menu-default {
+        position: relative;
+        width: 100%;
+    }
 
+    .user-data-settings {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .user-data-settings-top {
+            button {
+                margin: 10px;
+            }
+        }
+
+        .user-data-settings-sliders {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .user-data-settings-slider {
+                
+                * {
+                    margin: 10px;
+                }
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px;
+            }
+        }
+    }
 
     .user-data {
         margin-left: 30px;
@@ -147,8 +184,33 @@ $TOPBAR-COLOR: #f5f5f5;
         }
     }
 
-
     img {
         height: 100px;
+    }
+}
+
+.topbar-dark {
+    background: $TOPBAR-COLOR-DARK;
+}
+
+.user-menu-dark {
+    background: $TOPBAR-COLOR-DARK;
+
+    .user-data {
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: rgb(170, 170, 170);
+        }
+    }
+
+    .user-data-settings-sliders {
+        .user-data-settings-slider {
+            label {
+                color: white;
+            }
+        }
     }
 }
