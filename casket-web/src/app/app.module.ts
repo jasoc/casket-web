@@ -14,6 +14,8 @@ import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { BlockUIModule } from 'primeng/blockui';
 import { AccordionModule } from 'primeng/accordion';
+import { CarouselModule } from 'primeng/carousel';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +44,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    
+
     // PrimeNG
 
     ButtonModule,
@@ -51,6 +53,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     BlockUIModule,
     InputTextModule,
     AccordionModule,
+    CarouselModule,
     
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

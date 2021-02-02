@@ -21,12 +21,12 @@ import {
         opacity: 1,
         visibility: 'visible'
       })),
-      
+
       state('closed', style({
         opacity: 0,
         visibility: 'hidden'
       })),
-      
+
       transition('open <=> closed', [ animate('.1s') ]),
     ]),
 
@@ -62,16 +62,18 @@ import {
       
       transition(':enter', [
         style({
-          right: 'auto',
+          right: '100%',
         }),
-        animate('200ms', style({
-          right: '100px',
+        animate('250ms', style({
+          height: 'auto',
+          right: '0px',
         })),
       ]),
       
       transition(':leave', [
-        animate('200ms', style({
-          right: 'auto',
+        animate('250ms', style({
+          right: '100%',
+          height: '0px',
         })),
       ])
     ]),
@@ -80,16 +82,17 @@ import {
       
       transition(':enter', [
         style({
-          left: 'auto',
+          left: '100%',
         }),
         animate('200ms', style({
-          left: '100px',
+          width: '100%',
+          left: '0px',
         })),
       ]),
-      
+
       transition(':leave', [
         animate('200ms', style({
-          left: 'auto',
+          left: '100%',
         })),
       ])
     ]),
