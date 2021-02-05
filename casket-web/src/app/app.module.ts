@@ -23,6 +23,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   
@@ -30,6 +31,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     AppComponent,
     HomeComponent,
     TopbarComponent,
+    LoginComponent,
   ],
 
   imports: [

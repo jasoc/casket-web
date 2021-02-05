@@ -11,8 +11,8 @@
                 [@search]="inputValue != '' ? 'search' : 'notSearch'">Search</button>
     </div>
     <div class="topbar-right">
-        <div *ngIf="!_user.logged" class="topbar-right-buttons">
-            <button mat-flat-button color="accent">Login</button>
+        <div class="topbar-right-buttons">
+            <button mat-flat-button color="accent" (click)="onBtnLoginClick()">Login</button>
             <button mat-flat-button color="primary">Register</button>
         </div>
         <img *ngIf="_user.logged"
