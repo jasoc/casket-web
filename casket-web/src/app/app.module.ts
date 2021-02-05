@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
+import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
  
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -46,6 +47,7 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
+    MatRippleModule,
 
     // PrimeNG
 

@@ -124,6 +124,10 @@ export class TopbarComponent implements OnInit {
     this.router.navigate(["login"]);
   }
 
+  onCasketLogoClick(){
+    this.router.navigate([""]);
+  }
+
   onPopupSettingsBackCLick() {
     this.popupWindow = "default";
   }

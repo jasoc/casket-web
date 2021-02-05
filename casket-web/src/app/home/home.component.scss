@@ -1,0 +1,68 @@
+@import 'src/theme/variables';
+
+.home {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    .profiles-list-main {
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 330px;
+        height: 100%;
+        border-right: $BORDER-STANDARD;
+
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .profiles-list {
+            display: block;
+            flex-direction: column;
+            $BORDER-MARGIN: 25px;
+            overflow: scroll;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 70px;
+                background: white;
+                cursor: pointer;
+
+                * {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+                
+                label {
+                    margin-left: $BORDER-MARGIN;
+                    font-size: 18px;
+                }
+            }
+
+            .profile {
+                border-bottom: $BORDER-STANDARD;
+
+                img {
+                    margin-right: $BORDER-MARGIN;
+                    height: 25px;
+                }
+            }
+
+            .add-profile {
+                border-bottom: none;
+
+                mat-icon {
+                    margin-right: $BORDER-MARGIN;
+                }
+            }
+        }
+    }
+}
