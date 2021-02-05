@@ -118,6 +118,10 @@ export class TopbarComponent implements OnInit {
     this.popupWindow = "settings";
   }
 
+  onBtnLoginClick(){
+    this.router.navigate(["login"], { relativeTo: this.route });
+  }
+
   onPopupSettingsBackCLick() {
     this.popupWindow = "default";
   }
