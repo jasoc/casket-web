@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
 import { ThemeService } from 'src/services/theme.service';
 
 import {
@@ -104,7 +105,7 @@ export class TopbarComponent implements OnInit {
   public inputValue: string = "";
   public popupWindow: string = "default";
 
-  constructor(public _theme: ThemeService) { }
+  constructor(public router: Router, public _theme: ThemeService) { }
 
   ngOnInit(): void {
   }
@@ -118,8 +119,8 @@ export class TopbarComponent implements OnInit {
     this.popupWindow = "settings";
   }
 
-  onBtnLoginClick(){
-    this.router.navigate(["login"], { relativeTo: this.route });
+  onLoginButtonClick(){
+    this.router.navigate(["login"]);
   }
 
   onPopupSettingsBackCLick() {

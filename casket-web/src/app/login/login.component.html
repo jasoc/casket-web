@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="login-menu">
+    <div>
+        <div class="input-data">
+            <h1>Username</h1>
+            <p>
+                <mat-form-field appearance="legacy">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Placeholder">
+                  <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+              </p>
+            <h1>Password</h1>        
+            <input type="password" class="p-inputtext-lg" pInputText placeholder="login"/>    
+        </div>
+        <div class="login-menu-buttons">
+            <button mat-flat-button color="accent" style="border-radius: 100px;" (click)="onLoginButtonClick()">Login</button>
+            <div style="margin-left: 10px"></div>
+            <button mat-flat-button color="warn" style="border-radius: 100px;" (click)="onLogonButtonClick()">Logon</button>
+        </div>
+    </div>
+</div>

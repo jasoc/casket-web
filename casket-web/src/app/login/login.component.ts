@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
+import { ThemeService } from 'src/services/theme.service';
 
 @Component({
   selector: 'app-login',
@@ -12,4 +14,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLoginButtonClick(){
+
+  }
+
+  onLogonButtonClick(){
+
+  }
 }
