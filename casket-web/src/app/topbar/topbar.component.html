@@ -1,7 +1,7 @@
 <div class="topbar" [class]="_theme.dark ? 'topbar-dark' : ''">
     <div class="topbar-left">
-        <img src="assets/images/default-logo.png" alt="logo">
-        <h1>Casket</h1>
+        <img src="assets/images/casket-web-logo.png" alt="logo">
+        <h1></h1>
     </div>
     <div class="topbar-center">
         <input type="text" class="p-inputtext-lg" pInputText placeholder="Search" [(ngModel)]="inputValue" />
@@ -11,11 +11,12 @@
                 [@search]="inputValue != '' ? 'search' : 'notSearch'">Search</button>
     </div>
     <div class="topbar-right">
-        <div class="topbar-right-buttons">
+        <div *ngIf="!_user.logged" class="topbar-right-buttons">
             <button mat-flat-button color="accent">Login</button>
             <button mat-flat-button color="primary">Register</button>
         </div>
-        <img src="assets/images/default-user-image.png"
+        <img *ngIf="_user.logged"
+             src="assets/images/default-user-image.png"
              alt="user pic"
              (click)="onUserLogoClick()"
              [@borderNotBorder]="!menuVisible ? 'border' : 'notBorder'">

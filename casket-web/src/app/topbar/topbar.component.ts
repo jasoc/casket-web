@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { ThemeService } from 'src/services/theme.service';
+import { UserService } from 'src/services/user.service';
 
 import {
   trigger,
@@ -104,7 +105,7 @@ export class TopbarComponent implements OnInit {
   public inputValue: string = "";
   public popupWindow: string = "default";
 
-  constructor(public _theme: ThemeService) { }
+  constructor(public _theme: ThemeService, public _user: UserService) { }
 
   ngOnInit(): void {
   }
