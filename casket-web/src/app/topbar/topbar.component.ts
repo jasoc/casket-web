@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemeService } from 'src/services/theme.service';
+import { UserService } from 'src/services/user.service';
 
 import {
   trigger,
@@ -104,8 +105,8 @@ export class TopbarComponent implements OnInit {
   public menuVisible: boolean = false;
   public inputValue: string = "";
   public popupWindow: string = "default";
-
-  constructor(public router: Router, public _theme: ThemeService) { }
+  
+  constructor(public router: Router, public _theme: ThemeService, public _user: UserService) { }
 
   ngOnInit(): void {
   }
