@@ -1,7 +1,7 @@
 <div class="topbar" [class]="_theme.dark ? 'topbar-dark' : ''">
-    <div class="topbar-left">
+    <div (click)="onCasketLogoClick()" class="topbar-left">
         <img src="assets/images/casket-web-logo.png" alt="logo">
-        <h1></h1>
+        <h1>Casket</h1>
     </div>
     <div class="topbar-center">
         <input type="text" class="p-inputtext-lg" pInputText placeholder="Search" [(ngModel)]="inputValue" />
