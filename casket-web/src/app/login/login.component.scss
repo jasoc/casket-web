@@ -1,0 +1,43 @@
+$BACKGROUND: gray;
+$BACKGROUND-DARK: #242424;
+
+.login-menu {
+    background: $BACKGROUND;
+    position: static;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    * {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.login-menu-buttons{
+
+}
+
+.login-menu-dark {
+    background: $BACKGROUND-DARK;
+
+    .login-data {
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: rgb(170, 170, 170);
+        }
+    }
+
+    .login-data-settings-sliders {
+        .login-data-settings-slider {
+            label {
+                color: white;
+            }
+        }
+    }
+}

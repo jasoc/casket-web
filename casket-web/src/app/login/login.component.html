@@ -1,21 +1,29 @@
-<div class="login-menu">
+<div class="login-menu" [class]="_theme.dark ? 'login-menu-dark' : ''">
     <div>
         <div class="input-data">
-            <h1>Username</h1>
             <p>
                 <mat-form-field appearance="legacy">
-                  <mat-label>Username</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-hint>Hint</mat-hint>
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Put your username">
                 </mat-form-field>
-              </p>
-            <h1>Password</h1>        
-            <input type="password" class="p-inputtext-lg" pInputText placeholder="login"/>    
+            </p>
+            <p>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Put your password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </p>
         </div>
         <div class="login-menu-buttons">
-            <button mat-flat-button color="accent" style="border-radius: 100px;" (click)="onLoginButtonClick()">Login</button>
+            <button mat-flat-button color="accent" style="border-radius: 5px;"
+                (click)="onLoginButtonClick()">Login</button>
             <div style="margin-left: 10px"></div>
-            <button mat-flat-button color="warn" style="border-radius: 100px;" (click)="onLogonButtonClick()">Logon</button>
+            <button mat-flat-button color="warn" style="border-radius: 5px;"
+                (click)="onLogonButtonClick()">Logon</button>
         </div>
     </div>
 </div>

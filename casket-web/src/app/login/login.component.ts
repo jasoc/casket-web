@@ -8,8 +8,10 @@ import { ThemeService } from 'src/services/theme.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
+  hide = true;
 
-  constructor() { }
+  constructor(public _theme: ThemeService) { }
 
   ngOnInit(): void {
   }
